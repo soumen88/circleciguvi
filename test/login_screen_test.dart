@@ -17,7 +17,7 @@ void main(){
 
   test("Invalid Password", (){
     var result =  emailValidatorObject.validatePassword("abcd");
-    expect(result, 'Password is too short');
+    expect(result, 'Password is too short for now');
   });
 
   test("Valid Password", (){
