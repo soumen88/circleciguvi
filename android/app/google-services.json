@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "824901933444",
+    "project_id": "circleciguvi",
+    "storage_bucket": "circleciguvi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824901933444:android:7c3db74a13e329635ca5d1",
+        "android_client_info": {
+          "package_name": "com.guvi.learn.circleci.circleciguvi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYuXzVJ3GJSwk3aMHgKqZABwfBVQLqCEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
