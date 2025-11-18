@@ -1,56 +1,38 @@
 version: 2.1
 
 jobs:
-
   test:
     docker:
       - image: ghcr.io/cirruslabs/flutter:3.35.7
     steps:
       - checkout
-      - run: flutter pub get
-      - run: flutter test
+      - run:
+          name: Get Flutter dependencies
+          command: flutter pub get
+      - run:
+          name: Run tests
+          command: flutter test
 
   build-apk:
     docker:
       - image: ghcr.io/cirruslabs/flutter:3.35.7
     steps:
       - checkout
-      - run: flutter pub get
-      - run: flutter build apk --release
-
-      - persist_to_workspace:
-          root: build/app/outputs/flutter-apk
-          paths:
-            - app-release.apk
-
-  firebase-deploy:
-    docker:
-      - image: cimg/node:20.17  # Node required for Firebase CLI
-    steps:
-      - checkout
-
-      - attach_workspace:
-          at: ./apk
-
       - run:
-          name: Install Firebase CLI
-          command: npm install -g firebase-tools --unsafe-perm=true
-
+          name: Get Flutter dependencies
+          command: flutter pub get
       - run:
-          name: Deploy to Firebase App Distribution
-          command: |
-            firebase appdistribution:distribute apk/app-release.apk \
-              --app $FIREBASE_APP_ID \
-              --groups testers \
-              --token $FIREBASE_TOKEN
+          name: Build release APK
+          command: flutter build apk --release
+      - store_artifacts:
+          path: build/app/outputs/flutter-apk/app-release.apk
+          destination: app-release.apk
 
 workflows:
-  test_build_deploy:
+  version: 2
+  test_and_build:
     jobs:
       - test
       - build-apk:
           requires:
             - test
-      - firebase-deploy:
-          requires:
-            - build-apk
