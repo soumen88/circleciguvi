@@ -12,7 +12,20 @@
           "package_name": "com.guvi.learn.circleci.circleciguvi"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "824901933444-c7vk6t1ivmh8ogvh879g45hsunmsgbb1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.guvi.learn.circleci.circleciguvi",
+            "certificate_hash": "2b954af1b5f7451c2b6a59e889478dce0d427d26"
+          }
+        },
+        {
+          "client_id": "824901933444-hpv79so73vnngb2qnnhck7mmnuc0ectq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDYuXzVJ3GJSwk3aMHgKqZABwfBVQLqCEM"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824901933444-hpv79so73vnngb2qnnhck7mmnuc0ectq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
