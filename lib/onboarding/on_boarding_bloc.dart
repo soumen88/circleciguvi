@@ -121,8 +121,8 @@ class OnBoardingBloc extends Bloc<OnboardingScreenEvents, OnboardingScreenStates
       await prefs.setString(AppConstants.kPhotoUrl, _currentUser?.photoUrl ?? "Empty url");
       await prefs.setString(AppConstants.kEmailID, _currentUser?.email ?? "Empty email");
       await prefs.setString(AppConstants.kUserID, _currentUser?.id ?? "Empty Id");
-      //add(SignInSuccessEvent());
-      add(SignInFailedEvent());
+      add(SignInSuccessEvent());
+      //add(SignInFailedEvent());
     }
   }
 
